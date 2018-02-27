@@ -12,24 +12,21 @@ namespace MvcMovie
     public static void Main(string[] args)
     {
       var host = BuildWebHost(args);
+      BuildSeedData(host);
+      host.Run();
+    }
 
-      using (var scope = host.Services.CreateScope())
-      {
+    private static void BuildSeedData(IWebHost host){
+      using (var scope = host.Services.CreateScope()) {
         var services = scope.ServiceProvider;
-
-        try
-        {
-          // Requires using MvcMovie.Models;
+        try {
           SeedData.Initialize(services);
         }
-        catch (Exception ex)
-        {
+        catch (Exception ex) {
           var logger = services.GetRequiredService<ILogger<Program>>();
-          logger.LogError(ex, "An error occurred seeding the DB.");
+          logger.LogError(ex, $"An error occurred seeding the DB: {ex.InnerException.Message}");
         }
       }
-
-      host.Run();
     }
 
     public static IWebHost BuildWebHost(string[] args) =>
