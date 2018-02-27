@@ -21,12 +21,9 @@ namespace MvcMovie.Models
         {
 
           mvcMovieContext.Director.AddRange(
-            new Director { Id = 9999, Name = "unknown" }
-          );
-          mvcMovieContext.SaveChanges();
-
-          mvcMovieContext.Director.AddRange(
-            new Director { Id = 1, Name = "Rob Reiner" }
+            new Director { Id = -1, Name = "unknown" },
+            new Director { Id = 1, Name = "Rob Reiner" },
+            new Director { Id = 2, Name = "Ivan Reitman " }
           );
           mvcMovieContext.SaveChanges();
         }
@@ -63,7 +60,7 @@ namespace MvcMovie.Models
               ReleaseDate = DateTime.Parse("1984-3-13"),
               Genre = "Comedy",
               Price = 8.99M,
-              DirectorID = 9999
+              DirectorID = 2
             },
 
             new Movie
@@ -72,16 +69,23 @@ namespace MvcMovie.Models
               ReleaseDate = DateTime.Parse("1986-2-23"),
               Genre = "Comedy",
               Price = 9.99M,
-              DirectorID = 9999
+              DirectorID = 2
             },
-
+            new Movie
+            {
+              Title = "Ghostbusters ",
+              ReleaseDate = DateTime.Parse("2016-7-15"),
+              Genre = "Comedy",
+              Price = 8.99M,
+              DirectorID = -1
+            },
             new Movie
             {
               Title = "Rio Bravo",
               ReleaseDate = DateTime.Parse("1959-4-15"),
               Genre = "Western",
               Price = 3.99M,
-              DirectorID = 9999
+              DirectorID = -1
             }
           );
           movieContext.SaveChanges();
