@@ -19,9 +19,13 @@ namespace MvcMovie.Controllers
     }
 
     // GET: Movies
-    public async Task<IActionResult> Index()
-    {
-      return View(await _context.Movie.ToListAsync());
+    public async Task<IActionResult> Index(string searchString){
+      // allow search via url, as http://localhost:50812/Movies?searchString=Ghost 
+      var movies = from m in _context.Movie select m;
+      if (!String.IsNullOrEmpty(searchString)) {
+        movies = movies.Where(s => s.Title.Contains(searchString));
+      }
+      return View(await movies.ToListAsync());
     }
 
     // GET: Movies/Details/5
