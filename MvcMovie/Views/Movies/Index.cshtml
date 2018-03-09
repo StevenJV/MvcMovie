@@ -31,6 +31,9 @@
         @Html.DisplayNameFor(model => model.movies[0].Price)
       </th>
       <th>
+        @Html.DisplayNameFor(model => model.movies[0].Rating)
+      </th>
+      <th>
         Director.Id
       </th>
       <th></th>
@@ -51,6 +54,9 @@
         </td>
         <td>
           @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.Rating)
         </td>
         <td>
           @Html.DisplayFor(modelItem => item.DirectorID)
