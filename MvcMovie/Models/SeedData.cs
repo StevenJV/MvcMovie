@@ -56,6 +56,7 @@ namespace MvcMovie.Models
                 ReleaseDate = DateTime.Parse("1989-1-11"),
                 Genre = "Romantic Comedy",
                 Price = 7.99M,
+                Rating = "R",
                 DirectorID = 1
               },
               new Movie
@@ -64,6 +65,7 @@ namespace MvcMovie.Models
                 ReleaseDate = DateTime.Parse("1992-1-11"),
                 Genre = "Romantic Comedy",
                 Price = 7.99M,
+                Rating = "R",
                 DirectorID = 1
               },
               new Movie
@@ -72,6 +74,7 @@ namespace MvcMovie.Models
                 ReleaseDate = DateTime.Parse("1984-3-13"),
                 Genre = "Comedy",
                 Price = 8.99M,
+                Rating = "PG",
                 DirectorID = 2
               },
 
@@ -81,6 +84,7 @@ namespace MvcMovie.Models
                 ReleaseDate = DateTime.Parse("1986-2-23"),
                 Genre = "Comedy",
                 Price = 9.99M,
+                Rating = "PG",
                 DirectorID = 2
               },
               new Movie
@@ -89,6 +93,7 @@ namespace MvcMovie.Models
                 ReleaseDate = DateTime.Parse("2016-7-15"),
                 Genre = "Comedy",
                 Price = 8.99M,
+                Rating = "PG-13",
                 DirectorID = -1
               },
               new Movie
@@ -97,6 +102,7 @@ namespace MvcMovie.Models
                 ReleaseDate = DateTime.Parse("1959-4-15"),
                 Genre = "Western",
                 Price = 3.99M,
+                Rating = "NR",
                 DirectorID = -1
               }
             );
